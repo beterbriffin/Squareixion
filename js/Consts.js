@@ -10,7 +10,7 @@ let elements = {},
 
 const settings = {
     game_name: "Squareixion",
-    game_version: [0, 5, 2, ''],
+    game_version: [0, 5, 3, ''],
     savefile_name: "Squareixion save",
     fps: 'later...',
     save: true,
