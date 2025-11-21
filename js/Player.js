@@ -4,13 +4,13 @@ function getDefaultPlayerValues()
     Player.upgrades = {
         prestige_upgrades: [
             new Upgrade(1,'1e0', '3e0', (LVL)=>Decimal.pow(4, LVL), 'damage', 'prestige_points'),
-            new Upgrade(2, '3e0', '1e1', (LVL)=>Decimal.pow(6, LVL), 'damage', 'prestige_points', N('1e30')),
-            new Upgrade(3, '5e0', '2.5e1', (LVL)=>Decimal.pow(16, LVL), 'damage', 'prestige_points', N('1e30')),
-            new Upgrade(4, '5e7', '5e3', (LVL)=>Decimal.pow(2, LVL), 'light_points', 'prestige_points', N('1e30'), ()=>player.isUnlocked.light),
-            new Upgrade(5, '1e18', '4.5e2', (LVL)=>Decimal.pow(2, LVL), 'mini_cubes', 'prestige_points', N('1e30'), ()=>player.isUnlocked.minicubes),
+            new Upgrade(2, '3e0', '5e0', (LVL)=>Decimal.pow(6, LVL), 'damage', 'prestige_points', N('1e30')),
+            new Upgrade(3, '5e0', '2.1e1', (LVL)=>Decimal.pow(16, LVL), 'damage', 'prestige_points', N('1e30')),
+            new Upgrade(4, '5e7', '5e2', (LVL)=>Decimal.pow(10, LVL), 'light_points', 'prestige_points', N('1e30'), ()=>player.isUnlocked.light),
+            new Upgrade(5, '1e15', '4.1e2', (LVL)=>Decimal.pow(20, LVL), 'mini_cubes', 'prestige_points', N('1e30'), ()=>player.isUnlocked.minicubes),
         ],
         light_upgrades: [
-            new Upgrade(1, '1e0', '2e0', (LVL)=>Decimal.pow(50, LVL), 'damage', 'light_points', N('1e29')),
+            new Upgrade(1, '1e0', '2e0', (LVL)=>Decimal.pow(150, LVL), 'damage', 'light_points', N('1e29')),
             new Upgrade(2, '1e0', '2e0', (LVL)=>Decimal.pow(25, LVL), 'prestige_points', 'light_points', N('1e29')),
             new Upgrade(3, '1e0', '2e0', (LVL)=>N('0.2').div(Decimal.pow(2, LVL)), Array(1), 'light_points', N(20), undefined, undefined,
             function(){ return `<span class="positive">Autoclicker</span> and <span class="positive">${ abb_abs_int(N(2)) }x</span> its speed <br><span class="darker-text italic">Currently: ${this.bought_times.lte(0) ? 'no' : numToTime(+this.effect)}</span>`; }),
